@@ -22,6 +22,7 @@ public class Main {
             }
         }
 
+        // print sum
         System.out.println("\n\nSum of odd numbers between 1 to 100: " + sum);
 
     }
