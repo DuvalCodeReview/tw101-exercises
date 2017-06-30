@@ -9,11 +9,9 @@ public class Main {
         System.out.println("Odd numbers from 1 to 100:");
 
         // loop through numbers 1 to 100
-        for(int i = 1; i <= 100; i++) {
-
+        for (int i = 1; i <= 100; i++) {
             // check if number is odd
-            if(i % 2 == 1) {
-
+            if (i % 2 == 1) {
                 // print odd number
                 System.out.print(i + " ");
 
