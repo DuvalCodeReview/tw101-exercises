@@ -10,8 +10,7 @@ public class Main {
         Accumulator accumulator = new Accumulator();
 
         // call increment 5 times
-        for (int i = 0; i < 5; i++)
-        {
+        for (int i = 0; i < 5; i++) {
             accumulator.increment();
         }
 
