@@ -13,6 +13,22 @@ public class DiamondExercises {
 //             ***
 //            *****
     private static void drawAnIsoscelesTriangle(int n) {
+        int stars = 1, spaces = n + 1;
+
+        System.out.println("drawAnIsoscelesTriangle call: ");
+
+        for (int row = 1; row <= n; row++) {
+            for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
+                System.out.print(" ");
+            }
+            for (int starCount = 1; starCount <= stars; starCount++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            stars += 2;
+            spaces -= 1;
+        }
+        System.out.println("------------------------------------");
 
     }
 
@@ -24,6 +40,38 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
+        int stars = 1, spaces = n + 1, rowCount = 1;
+
+        System.out.println("drawADiamond call: ");
+
+        for (int row = 1; row <= n+(n-1); row++) {
+
+            if(rowCount < n) {
+                for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
+                    System.out.print(" ");
+                }
+                for (int starCount = 1; starCount <= stars; starCount++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+                stars += 2;
+                spaces -= 1;
+                rowCount += 1;
+            } else {
+                for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
+                    System.out.print(" ");
+                }
+                for (int starCount = 1; starCount <= stars; starCount++) {
+                    System.out.print("*");
+                }
+                System.out.println();
+                stars -= 2;
+                spaces += 1;
+                rowCount += 1;
+            }
+        }
+
+        System.out.println("------------------------------------");
 
     }
 
@@ -36,6 +84,43 @@ public class DiamondExercises {
 //            ***
 //             *
     private static void drawADiamondWithYourName(int n) {
+        int stars = 1, spaces = n + 1, rowCount = 1;
 
+        System.out.println("drawADiamondWithYourName call: ");
+
+        for (int row = 1; row <= n+(n-1); row++) {
+
+            if(rowCount < n) {
+                for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
+                    System.out.print(" ");
+                }
+
+                for (int starCount = 1; starCount <= stars; starCount++) {
+                    System.out.print("*");
+                }
+
+                System.out.println();
+                stars += 2;
+                spaces -= 1;
+                rowCount += 1;
+            } else {
+                for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
+                    System.out.print(" ");
+                }
+                if (rowCount == (n)) {
+                    System.out.print("Duvall");
+                } else {
+                    for (int starCount = 1; starCount <= stars; starCount++) {
+                        System.out.print("*");
+                    }
+                }
+                System.out.println();
+                stars -= 2;
+                spaces += 1;
+                rowCount += 1;
+            }
+        }
+
+        System.out.println("------------------------------------");
     }
 }
