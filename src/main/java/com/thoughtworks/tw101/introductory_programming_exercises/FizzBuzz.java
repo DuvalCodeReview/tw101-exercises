@@ -32,6 +32,25 @@ public class FizzBuzz {
     }
 
     private static void fizzBuzz() {
+        boolean divisibleBy3, divisibleBy5, divisibleBy3And5;
+
+        for (int i = 1; i <= 100; i++) {
+            divisibleBy3 = (i % 3 == 0);
+            divisibleBy5 = (i % 5 == 0);
+            divisibleBy3And5 = (i % 3 == 0) && (i % 5 == 0);
+
+            if(divisibleBy3And5) {
+                System.out.println("FizzBuzz");
+            } else if (divisibleBy3) {
+                System.out.println("Fizz");
+            } else if (divisibleBy5) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+
+
+        }
 
     }
 }
