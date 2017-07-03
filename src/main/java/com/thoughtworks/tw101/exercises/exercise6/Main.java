@@ -26,9 +26,6 @@ public class Main {
 
         for (Orc monster : monsters) {
             monster.takeDamage(10);
-        }
-
-        for (Orc monster : monsters) {
             monster.reportStatus();
         }
 
