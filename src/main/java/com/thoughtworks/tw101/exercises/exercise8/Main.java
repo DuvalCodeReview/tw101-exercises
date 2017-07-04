@@ -5,7 +5,8 @@ package com.thoughtworks.tw101.exercises.exercise8;
 // where the user entered a String that is not parseable.
 
 public class Main {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        Guess.promptRandomNumberGuessing();
     }
 }
