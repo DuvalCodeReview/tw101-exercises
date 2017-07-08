@@ -8,17 +8,17 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Node root = new Node("Cecil");
+        BinarySearchTree bst = new BinarySearchTree(new Node("Cecil"));
 
-        root.add("Michelle");
-        root.add("Bill");
-        root.add("Jagruti");
-        root.add("Tess");
-        root.add("Sue-Ellen");
-        root.add("Sara");
-        root.add("Casey");
+        bst.add("Michelle");
+        bst.add("Bill");
+        bst.add("Jagruti");
+        bst.add("Tess");
+        bst.add("Sue-Ellen");
+        bst.add("Sara");
+        bst.add("Casey");
 
-        List<String> names = root.names();
+        List<String> names = bst.names(bst.getRoot());
 
         for (String name : names) {
             System.out.println(name);
