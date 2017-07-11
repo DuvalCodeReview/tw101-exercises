@@ -58,6 +58,6 @@ public class Guess {
         int num;
         Random rand = new Random();
 
-        return num = rand.nextInt(100) + 1;
+        return num = rand.nextInt(max) + min;
     }
 }
