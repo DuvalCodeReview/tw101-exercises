@@ -7,6 +7,8 @@ package com.thoughtworks.tw101.exercises.exercise8;
 public class Main {
 
     public static void main(String[] args) {
-        Guess.promptRandomNumberGuessing();
+        Guess guessingGame = new Guess(100, 1);
+
+        guessingGame.promptRandomNumberGuessing();
     }
 }

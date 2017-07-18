@@ -9,9 +9,15 @@ import java.util.Scanner;
  * Created by Duvall_Lanell on 7/4/17.
  */
 public class Guess {
-    static ArrayList<Integer> guessAttempts = new ArrayList<Integer>();
+    int guessNumber;
+    ArrayList<Integer> guessAttempts = new ArrayList<Integer>();
+    Random rand = new Random();
 
-    private static boolean checkGuess(int guess, int number) {
+    public Guess (int max, int min) {
+        guessNumber = rand.nextInt(max) + min;
+    }
+
+    private boolean checkGuess(int guess, int number) {
         guessAttempts.add(guess);
 
         if (guess == number) {
@@ -32,8 +38,7 @@ public class Guess {
         }
     }
 
-    public static void promptRandomNumberGuessing() {
-        int randomNumber = getRandomNumber(1, 100);
+    public void promptRandomNumberGuessing() {
         int guessNum;
         Scanner scan = new Scanner(System.in);
 
@@ -42,7 +47,7 @@ public class Guess {
         try {
             guessNum = scan.nextInt();
 
-            while (!checkGuess(guessNum, randomNumber)) {
+            while (!checkGuess(guessNum, guessNumber)) {
                 System.out.print("Guess the number between 1 and 100: ");
                 guessNum = scan.nextInt();
             }
@@ -52,12 +57,5 @@ public class Guess {
             System.out.println("Incorrect input. Expecting a number.");
         }
 
-    }
-
-    private static int getRandomNumber(int min, int max) {
-        int num;
-        Random rand = new Random();
-
-        return num = rand.nextInt(max) + min;
     }
 }
