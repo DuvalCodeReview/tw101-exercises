@@ -2,13 +2,13 @@ package com.thoughtworks.tw101.introductory_programming_exercises;
 
 public class DiamondExercises {
     public static void main(String[] args) {
-//        System.out.println("drawAnIsoscelesTriangle call: ");
-//        drawAnIsoscelesTriangle(3);
-//        System.out.println("------------------------------------");
-//
-//        System.out.println("drawADiamond call: ");
-//        drawADiamond(3);
-//        System.out.println("------------------------------------");
+        System.out.println("drawAnIsoscelesTriangle call: ");
+        drawAnIsoscelesTriangle(3);
+        System.out.println("------------------------------------");
+
+        System.out.println("drawADiamond call: ");
+        drawADiamond(3);
+        System.out.println("------------------------------------");
 
         System.out.println("drawADiamondWithYourName call: ");
         drawADiamondWithYourName(3);
