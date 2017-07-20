@@ -12,24 +12,25 @@ public class DiamondExercises {
 //              *
 //             ***
 //            *****
+
+    private static void drawSpaces(int spaces){
+        for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
+            System.out.print(" ");
+        }
+    }
+    private static void drawStars(int stars){
+        for (int starCount = 1; starCount <= stars; starCount++) {
+            System.out.print("*");
+        }
+    }
     private static void drawAnIsoscelesTriangle(int n) {
         int stars = 1, spaces = n + 1;
 
-        System.out.println("drawAnIsoscelesTriangle call: ");
-
-        for (int row = 1; row <= n; row++) {
-            for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
-                System.out.print(" ");
-            }
-            for (int starCount = 1; starCount <= stars; starCount++) {
-                System.out.print("*");
-            }
+        for (int row = 1; row <= n; row++, stars+=2, spaces-=1) {
+            drawSpaces(spaces);
+            drawStars(stars);
             System.out.println();
-            stars += 2;
-            spaces -= 1;
         }
-        System.out.println("------------------------------------");
-
     }
 
 //    Diamond
