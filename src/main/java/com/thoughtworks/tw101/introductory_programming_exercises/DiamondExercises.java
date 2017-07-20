@@ -2,9 +2,17 @@ package com.thoughtworks.tw101.introductory_programming_exercises;
 
 public class DiamondExercises {
     public static void main(String[] args) {
+        System.out.println("drawAnIsoscelesTriangle call: ");
         drawAnIsoscelesTriangle(3);
+        System.out.println("------------------------------------");
+
+        System.out.println("drawADiamond call: ");
         drawADiamond(3);
+        System.out.println("------------------------------------");
+
+        System.out.println("drawADiamondWithYourName call: ");
         drawADiamondWithYourName(3);
+        System.out.println("------------------------------------");
     }
 
 //    Isosceles Triangle
@@ -41,25 +49,16 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
-        System.out.println("drawADiamond call: ");
 
         drawAnIsoscelesTriangle(n-1);
         int stars = (2*n)-1;  //1 + 2(n-1) (we need the stars and spaces info  to carry over)
         int spaces = 1;       //n - 1
 
-        for (int row = 1; row <= n; row++) {
-            for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
-                System.out.print(" ");
-            }
-            for (int starCount = 1; starCount <= stars; starCount++) {
-                System.out.print("*");
-            }
+        for (int row = 1; row <= n; row++, stars -=2, spaces+=1) {
+            drawSpaces(spaces);
+            drawStars(stars);
             System.out.println();
-            stars -= 2;
-            spaces += 1;
         }
-
-        System.out.println("------------------------------------");
 
     }
 
@@ -73,8 +72,6 @@ public class DiamondExercises {
 //             *
     private static void drawADiamondWithYourName(int n) {
         int stars = 1, spaces = n + 1, rowCount = 1;
-
-        System.out.println("drawADiamondWithYourName call: ");
 
         for (int row = 1; row <= n+(n-1); row++) {
 
@@ -109,6 +106,5 @@ public class DiamondExercises {
             }
         }
 
-        System.out.println("------------------------------------");
     }
 }
