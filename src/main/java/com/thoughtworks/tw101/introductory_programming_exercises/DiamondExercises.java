@@ -31,6 +31,15 @@ public class DiamondExercises {
             System.out.print("*");
         }
     }
+
+    private static void drawUpsideDownIsoscelesTriangle(int n, int stars, int spaces){
+        for (int row = 1; row <= n; row++, stars -=2, spaces+=1) {
+            drawSpaces(spaces);
+            drawStars(stars);
+            System.out.println();
+        }
+    }
+
     private static void drawAnIsoscelesTriangle(int n) {
         int stars = 1, spaces = n + 1;
 
@@ -52,12 +61,7 @@ public class DiamondExercises {
         drawAnIsoscelesTriangle(n-1);
         int stars = (2*n)-1;  //1 + 2(n-1) (we need the stars and spaces info  to carry over)
         int spaces = 1;       //n - 1
-
-        for (int row = 1; row <= n; row++, stars -=2, spaces+=1) {
-            drawSpaces(spaces);
-            drawStars(stars);
-            System.out.println();
-        }
+        drawUpsideDownIsoscelesTriangle(n, stars, spaces);
     }
 
 //    Diamond with Name
@@ -71,14 +75,10 @@ public class DiamondExercises {
     //Both a long method(bloater) and switch statement(OO Abuser) smell
     private static void drawADiamondWithYourName(int n) {
         drawAnIsoscelesTriangle(n-1);
-        System.out.println("Duvall");
 
-        //n rows have been output to screen, stars and spaces properly shifted
+        System.out.println("Duvall");
         int stars = (2*n)-3, spaces = 2;
-        for (int row = 1; row <= n; row++, stars-=2, spaces+=1) {
-            drawSpaces(spaces);
-            drawStars(stars);
-            System.out.println();
-        }
+
+        drawUpsideDownIsoscelesTriangle(n-1, stars, spaces);
     }
 }
