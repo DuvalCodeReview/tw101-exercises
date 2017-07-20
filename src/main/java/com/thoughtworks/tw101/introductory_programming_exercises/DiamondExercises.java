@@ -41,19 +41,11 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
-        int stars = 1, spaces = n + 1;
-
         System.out.println("drawADiamond call: ");
 
-        for (int rowCount = 1; rowCount < n; rowCount++, stars+=2, spaces-=1) {
-            for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
-                System.out.print(" ");
-            }
-            for (int starCount = 1; starCount <= stars; starCount++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+        drawAnIsoscelesTriangle(n-1);
+        int stars = (2*n)-1;  //1 + 2(n-1) (we need the stars and spaces info  to carry over)
+        int spaces = 1;       //n - 1
 
         for (int row = 1; row <= n; row++) {
             for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
