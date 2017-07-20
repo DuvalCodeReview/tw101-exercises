@@ -2,13 +2,13 @@ package com.thoughtworks.tw101.introductory_programming_exercises;
 
 public class DiamondExercises {
     public static void main(String[] args) {
-        System.out.println("drawAnIsoscelesTriangle call: ");
-        drawAnIsoscelesTriangle(3);
-        System.out.println("------------------------------------");
-
-        System.out.println("drawADiamond call: ");
-        drawADiamond(3);
-        System.out.println("------------------------------------");
+//        System.out.println("drawAnIsoscelesTriangle call: ");
+//        drawAnIsoscelesTriangle(3);
+//        System.out.println("------------------------------------");
+//
+//        System.out.println("drawADiamond call: ");
+//        drawADiamond(3);
+//        System.out.println("------------------------------------");
 
         System.out.println("drawADiamondWithYourName call: ");
         drawADiamondWithYourName(3);
@@ -68,32 +68,17 @@ public class DiamondExercises {
 //           Bill
 //            ***
 //             *
+    //Both a long method(bloater) and switch statement(OO Abuser) smell
     private static void drawADiamondWithYourName(int n) {
-        int stars = 1, spaces = n + 1, rowCount = 1;
+        drawAnIsoscelesTriangle(n-1);
+        System.out.println("Duvall");
 
-        for (int row = 1; row <= n+(n-1); row++) {
-
-            if(rowCount < n) {
-                drawSpaces(spaces);
-                drawStars(stars);
-
-                System.out.println();
-                stars += 2;
-                spaces -= 1;
-                rowCount += 1;
-            } else {
-                drawSpaces(spaces);
-                if (rowCount == (n)) {
-                    System.out.print("Duvall");
-                } else {
-                    drawStars(stars);
-                }
-                System.out.println();
-                stars -= 2;
-                spaces += 1;
-                rowCount += 1;
-            }
+        //n rows have been output to screen, stars and spaces properly shifted
+        int stars = (2*n)-3, spaces = 2;
+        for (int row = 1; row <= n; row++, stars-=2, spaces+=1) {
+            drawSpaces(spaces);
+            drawStars(stars);
+            System.out.println();
         }
-
     }
 }
