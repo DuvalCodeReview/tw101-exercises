@@ -15,12 +15,6 @@ public class DiamondExercises {
         System.out.println("------------------------------------");
     }
 
-//    Isosceles Triangle
-//    Given a number n, print a centered triangle. Example for n=3:
-//              *
-//             ***
-//            *****
-
     private static void drawSpaces(int spaces){
         for (int spaceCount = 1; spaceCount <= spaces; spaceCount++) {
             System.out.print(" ");
@@ -39,6 +33,12 @@ public class DiamondExercises {
             System.out.println();
         }
     }
+
+//    Isosceles Triangle
+//    Given a number n, print a centered triangle. Example for n=3:
+//              *
+//             ***
+//            *****
 
     private static void drawAnIsoscelesTriangle(int n) {
         int stars = 1, spaces = n + 1;
@@ -59,8 +59,8 @@ public class DiamondExercises {
 //              *
     private static void drawADiamond(int n) {
         drawAnIsoscelesTriangle(n-1);
-        int stars = (2*n)-1;  //1 + 2(n-1) (we need the stars and spaces info  to carry over)
-        int spaces = 1;       //n - 1
+        int stars = (2*n)-1;  //1 + 2(n-1)  (we need the stars and spaces info to carry over)
+        int spaces = 1;       //n - (n-1)
         drawUpsideDownIsoscelesTriangle(n, stars, spaces);
     }
 
